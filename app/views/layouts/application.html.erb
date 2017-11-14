@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+  <title>NgInterview</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+
+  <!-- for movile devices -->
+  <meta name="viewport" content="width=320, initial-scale=1">
+</head>
+<body>
+
+<%= yield %>
+
+</body>
+</html>
