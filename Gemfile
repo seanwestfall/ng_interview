@@ -2,8 +2,8 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.6'
-# gem 'sqlite3'
-gem 'pg'
+# gem 'sqlite3' group: :development # Added development group.
+# gem 'pg' group: :production # Added postgres and made it production only.
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'jquery-rails'
@@ -35,4 +35,10 @@ end
 group :development do
   gem 'web-console', '~> 2.0'
   gem 'spring'
+  gem 'sqlite3'
 end
+
+group :production do
+  gem 'pg'
+end
+
