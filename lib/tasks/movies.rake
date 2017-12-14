@@ -35,9 +35,9 @@ namespace :movies do
           cast_member.name = cast['name']
           cast_member.profile_path = cast['profile_path']
           cast_member.save!
-          #if index == 0 then movie.update_column(:top_cast_1, cast_member.id) end
-          #if index == 1 then movie.update_column(:top_cast_2, cast_member.id) end
-          #if index == 2 then movie.update_column(:top_cast_3, cast_member.id) end
+          if index == 0 then movie.update_column(:top_cast_1, cast_member.id) end
+          if index == 1 then movie.update_column(:top_cast_2, cast_member.id) end
+          if index == 2 then movie.update_column(:top_cast_3, cast_member.id) end
         end
         puts '--------------------------------------------------------------------'
         puts "PULLING CREW: #{from_api['title']}..."
@@ -53,9 +53,9 @@ namespace :movies do
           crew_member.job = crew['job']
           crew_member.profile_path = crew['profile_path']
           crew_member.save!
-          #if index == 0 then movie.update_column(:featured_crew_1, crew_member.id) end
-          #if index == 1 then movie.update_column(:featured_crew_2, crew_member.id) end
-          #if index == 2 then movie.update_column(:featured_crew_3, crew_member.id) end
+          if index == 0 then movie.update_column(:featured_crew_1, crew_member.id) end
+          if index == 1 then movie.update_column(:featured_crew_2, crew_member.id) end
+          if index == 2 then movie.update_column(:featured_crew_3, crew_member.id) end
         end
       end
     end

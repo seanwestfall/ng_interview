@@ -35,13 +35,13 @@ ActiveRecord::Schema.define(version: 20160809002955) do
   end
 
   create_table "movies", force: :cascade do |t|
-    t.string   "title",        null: false
-    t.string   "poster_path",  null: false
-    t.string   "overview",     null: false
-    t.integer  "tmdb_id",      null: false
-    t.datetime "release_date", null: false
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.string   "title",           null: false
+    t.string   "poster_path",     null: false
+    t.string   "overview",        null: false
+    t.integer  "tmdb_id",         null: false
+    t.datetime "release_date",    null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
     t.integer  "top_cast_1"
     t.integer  "top_cast_2"
     t.integer  "top_cast_3"
