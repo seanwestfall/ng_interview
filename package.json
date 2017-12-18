@@ -1,7 +1,7 @@
 {
-  "name": "clutter-ng-interview",
+  "name": "sample angular app",
   "version": "1.0.0",
-  "description": "Angular interview project",
+  "description": "Example Angular 1 app that uses the TMdb database",
   "dependencies": {
     "karma": ">= 0.13.9",
     "karma-chai": "~0.1",

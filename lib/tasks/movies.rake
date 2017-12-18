@@ -4,10 +4,13 @@ namespace :movies do
       :accept => 'application/json'
     }
 
+    # Heroku has a hard limit on the number of rows in the free tier db
+    row_limit = 10000
+
     pages = (1..25).to_a
-    base_movie_url = 'http://api.themoviedb.org/3/movie/popular?api_key=03c0c493651961ae410bb4a44efaf098&page='
+    base_movie_url = 'http://api.themoviedb.org/3/movie/popular?api_key=94ca34c92341810bcae4a8bfe2d10a97&page='
     base_cast_url = 'http://api.themoviedb.org/3/movie/'
-    api_key_param = '?api_key=03c0c493651961ae410bb4a44efaf098'
+    api_key_param = '?api_key=94ca34c92341810bcae4a8bfe2d10a97'
 
     pages.each do |page|
       url = base_movie_url + page.to_s
@@ -16,8 +19,8 @@ namespace :movies do
       row_counter = 0;
 
       response.each do |from_api|
-        puts "Row counter for Heroku: #{row_counter}"
-        break if row_counter >= 10000
+        puts "--Row counter for Heroku: #{row_counter}"
+        break if row_counter >= row_limit
         movie = Movie.find_or_initialize_by title: from_api['title']
         movie.poster_path = from_api['poster_path']
         movie.overview = from_api['overview']
