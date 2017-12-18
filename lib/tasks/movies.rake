@@ -13,14 +13,18 @@ namespace :movies do
       url = base_movie_url + page.to_s
       response = JSON.parse(RestClient.get url, headers)
       response = response['results']
+      row_counter = 0;
 
       response.each do |from_api|
+        puts "Row counter for Heroku: #{row_counter}"
+        break if row_counter >= 10000
         movie = Movie.find_or_initialize_by title: from_api['title']
         movie.poster_path = from_api['poster_path']
         movie.overview = from_api['overview']
         movie.tmdb_id = from_api['id']
         movie.release_date = from_api['release_date']
         movie.save!
+        row_counter += 1;
         puts "----------------------------------#{from_api['title']}----------------------------------"
         puts "PULLING CAST: #{from_api['title']}..."
 
@@ -35,6 +39,7 @@ namespace :movies do
           cast_member.name = cast['name']
           cast_member.profile_path = cast['profile_path']
           cast_member.save!
+          row_counter += 1;
           if index == 0 then movie.update_column(:top_cast_1, cast_member.id) end
           if index == 1 then movie.update_column(:top_cast_2, cast_member.id) end
           if index == 2 then movie.update_column(:top_cast_3, cast_member.id) end
@@ -53,6 +58,7 @@ namespace :movies do
           crew_member.job = crew['job']
           crew_member.profile_path = crew['profile_path']
           crew_member.save!
+          row_counter += 1;
           if index == 0 then movie.update_column(:featured_crew_1, crew_member.id) end
           if index == 1 then movie.update_column(:featured_crew_2, crew_member.id) end
           if index == 2 then movie.update_column(:featured_crew_3, crew_member.id) end
