@@ -12,14 +12,14 @@ namespace :movies do
     base_cast_url = 'http://api.themoviedb.org/3/movie/'
     api_key_param = '?api_key=94ca34c92341810bcae4a8bfe2d10a97'
 
+    row_counter = 0;
     pages.each do |page|
       url = base_movie_url + page.to_s
       response = JSON.parse(RestClient.get url, headers)
       response = response['results']
-      row_counter = 0;
 
       response.each do |from_api|
-        puts "--Row counter for Heroku: #{row_counter}"
+        puts "--Row counter for Heroku: #{row_counter} -- Page: #{page.to_s}"
         break if row_counter >= row_limit
         movie = Movie.find_or_initialize_by title: from_api['title']
         movie.poster_path = from_api['poster_path']
