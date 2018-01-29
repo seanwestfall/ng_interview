@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.10'
+gem 'rails', '5.1.4'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '4.1.3'
 gem 'jquery-rails'
@@ -31,7 +31,7 @@ group :development, :test do
 end
 
 group :development do
-  gem 'web-console', '~> 2.0'
+  gem 'web-console', '~> 3.5.1'
   gem 'spring'
   gem 'sqlite3'
 end
