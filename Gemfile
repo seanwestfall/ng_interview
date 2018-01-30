@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+ruby '2.5.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '5.1.4'
@@ -39,5 +40,6 @@ end
 group :production do
   gem 'pg', '~> 0.18'
   gem 'rails_12factor'
+  gem 'puma'
 end
 
