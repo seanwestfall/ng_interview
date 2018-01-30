@@ -4,7 +4,7 @@ ruby '2.5.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '5.1.4'
 gem 'sass-rails', '~> 5.0'
-gem 'uglifier', '4.1.3'
+gem 'uglifier', '4.1.5'
 gem 'jquery-rails'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
@@ -27,7 +27,7 @@ end
 
 group :development, :test do
   gem 'byebug'
-  gem 'rspec-rails'
+  gem 'rspec-rails', '~> 3.7.1'
   gem 'factory_bot_rails'
 end
 
@@ -38,7 +38,8 @@ group :development do
 end
 
 group :production do
-  gem 'pg', '~> 0.18'
+  # https://github.com/rails/rails/issues/31673
+  gem 'pg', '~> 0.21'
   gem 'rails_12factor'
   gem 'puma'
 end
