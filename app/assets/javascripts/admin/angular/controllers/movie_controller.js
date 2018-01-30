@@ -5,7 +5,7 @@
     movie.selectedMovie = movieService;
 
     // w640 tmdb url
-    movie.w640url = 'https://image.tmdb.org/t/p/w640/';
+    movie.w640url = 'https://image.tmdb.org/t/p/w342';
 
     movie.selectedMovie.movieUrl = "";
     var setMovieImgUrl = function() {
