@@ -1,4 +1,4 @@
-FactoryGirl.define do
+FactoryBot.define do
   factory :cast_and_crew do
     character "John McClane"
     name "Bruce Willis"

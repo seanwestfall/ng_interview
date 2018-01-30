@@ -1,4 +1,4 @@
-FactoryGirl.define do
+FactoryBot.define do
   factory :crew_member do
     department "Art"
     movie_id 1

@@ -1,4 +1,4 @@
-FactoryGirl.define do
+FactoryBot.define do
   factory :movie do
     title "Die Hard"
     poster_path "http://ia.media-imdb.com/images/M/MV5BYmY2ZGEwMTYtNjBmZS00OGE4LWEyMmUtNjAwMWUxZjVmZTRiXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_SY1000_CR0,0,637,1000_AL_.jpg"
