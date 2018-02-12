@@ -8,7 +8,7 @@
         <h4>Top Billed Cast</h4>
         <div class="row cast-row" align="center">
           <div class="col-md-4" ng-repeat="member in movie.selectedMovie.cast|limitTo:3">
-            <img class="cast" ng-src="http://image.tmdb.org/t/p/w184/{{member.profile_path}}">
+            <img class="cast" ng-src="http://image.tmdb.org/t/p/w342/{{member.profile_path}}">
             <div>{{member.name}}</div>
           </div>
         </div>
@@ -32,8 +32,8 @@
   </div> <!-- movie -->
   <div class="search span2" ng-controller="searchCtrl as search">
     <div ng-click="search.openSlider()" ng-hide="search.closeBtn" class="slider"><img style="width:32px" src="/assets/icons/menu-alt-512-23638308073a2fdb616cff4e3733a54f96a7517369063c0901de9a37d6f58420.png"></div>
-<div class="menu">
-<div class="p-3"><input ng-model="search.input" placeholder="Search" ng-change="search.query()"><div class="close" ng-click="search.openSlider()"><img style="width:32px" src="/assets/icons/menu_hamburger_close-58bf6043ddcbec4efa91a1f1f309cd33f5f56989bd1c3a823fc233911248b223.png"></div></div>
+    <div class="menu">
+    <div class="p-3"><input ng-model="search.input" placeholder="Search" ng-change="search.query()"><div class="close" ng-click="search.openSlider()"><img style="width:32px" src="/assets/icons/menu_hamburger_close-58bf6043ddcbec4efa91a1f1f309cd33f5f56989bd1c3a823fc233911248b223.png"></div></div>
     <div class="results" ng-show="search.result_length != 0">
       <div>{{search.result_length}} results</div>
       <div class="item" ng-repeat="item in search.results">

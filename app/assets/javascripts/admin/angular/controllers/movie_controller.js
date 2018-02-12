@@ -5,6 +5,7 @@
     movie.selectedMovie = movieService;
 
     // w640 tmdb url
+    // w342
     movie.w640url = 'https://image.tmdb.org/t/p/w342';
 
     movie.selectedMovie.movieUrl = "";

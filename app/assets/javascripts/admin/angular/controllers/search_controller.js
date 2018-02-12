@@ -41,11 +41,11 @@
     search.openSlider = function() {
       if (angular.element(window).width()<=767) {
       	search.closeBtn = !search.closeBtn;
-	if(search.closeBtn) {
-		angular.element('.menu').css('right', '-1px');
-	} else {
-		angular.element('.menu').css('right', '-215px');
-	}
+        if(search.closeBtn) {
+          angular.element('.menu').css('right', '-1px');
+        } else {
+          angular.element('.menu').css('right', '-215px');
+        }
       }
     }
 
