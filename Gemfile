@@ -51,6 +51,6 @@ group :production do
   # https://github.com/rails/rails/issues/31673
   gem 'pg', '~> 0.21'
   gem 'rails_12factor'
-  gem 'puma'
+  gem 'puma', '~> 3.11.3'
 end
 
