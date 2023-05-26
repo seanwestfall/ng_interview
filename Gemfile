@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 ruby '3.2.2'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '5.1.5'
+gem 'rails', '7.0.5'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '4.1.6'
 gem 'jquery-rails'
@@ -12,18 +12,19 @@ gem 'rdoc', '~> 6.0.1'
 gem 'rest-client'
 
 gem 'bootstrap'
-gem 'rails-assets-tether', '>= 1.3.3'
+# gem 'rails-assets-tether', '>= 1.3.3'
+gem 'rails-assets-tether', '>= 1.1.1'
 gem 'font-awesome-rails'
 
 gem 'ransack'
 gem 'will_paginate', '~> 3.0'
 gem 'autoprefixer-rails', '~> 8.0.0'
-gem 'ffi', '~> 1.9.21'
-gem 'i18n', '~> 0.9.5'
+gem 'ffi', '~> 1.15.5'
+gem 'i18n', '~> 1.13.0'
 gem 'json', '~> 2.1.0'
 gem 'loofah', '~> 2.2.0'
-gem 'rack', '~> 2.0.3' # locked at 2.0.3, though latest is 2.0.4
-gem 'tzinfo', '~> 1.2.5'
+gem 'rack', '~> 2.2.7' # locked at 2.0.3, though latest is 2.0.4
+gem 'tzinfo', '~> 2.0.6'
 gem 'unf_ext', '~> 0.0.7.5'
 gem 'websocket-driver', '~> 0.6.5' # locked at 0.6.5, though latest is 0.7.0
 
@@ -49,7 +50,7 @@ end
 
 group :production do
   # https://github.com/rails/rails/issues/31673
-  gem 'pg', '~> 0.21'
+  gem 'pg', '~> 1.5.3'
   gem 'rails_12factor'
   gem 'puma', '~> 3.11.3'
 end

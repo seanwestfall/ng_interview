@@ -20,3 +20,5 @@
 /node_modules
 /solution
 /coverage
+
+Gemfile.lock
