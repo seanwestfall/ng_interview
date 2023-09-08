@@ -1,57 +1,72 @@
-source 'https://rubygems.org'
-ruby '3.2.2'
+source "https://rubygems.org"
+git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '7.0.5'
-gem 'sass-rails', '~> 6.0'
-gem 'uglifier', '4.2'
-gem 'jquery-rails'
-gem 'jbuilder', '~> 2.11.5'
-gem 'sdoc', '~> 2.6.1', group: :doc
-gem 'rdoc', '~> 6.5'
-gem 'rest-client'
+ruby "3.2.2"
 
-gem 'bootstrap'
-# gem 'rails-assets-tether', '>= 1.3.3'
-gem 'rails-assets-tether', '>= 1.1.1'
-gem 'font-awesome-rails'
+# Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
+gem "rails", "~> 7.0.7", ">= 7.0.7.2"
 
-gem 'ransack'
-gem 'will_paginate', '~> 4.0'
-gem 'autoprefixer-rails', '~> 10.4.13.0'
-gem 'ffi', '~> 1.15.5'
-gem 'i18n', '~> 1.14.1'
-gem 'json', '~> 2.6.3'
-gem 'loofah', '~> 2.21.3'
-gem 'rack', '~> 2.2.7' # locked at 2.0.3, though latest is 2.0.4
-gem 'tzinfo', '~> 2.0.6'
-gem 'unf_ext', '~> 0.0.8.2'
-gem 'websocket-driver', '~> 0.7.5' # locked at 0.6.5, though latest is 0.7.0
+# The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
+gem "sprockets-rails"
 
-source 'https://rails-assets.org' do
-  gem 'rails-assets-angular'
-  gem 'rails-assets-angular-resource'
-  group :development, :test do
-    gem 'rails-assets-angular-mocks'
-  end
-end
+# Use sqlite3 as the database for Active Record
+gem "sqlite3", "~> 1.4"
+
+# Use the Puma web server [https://github.com/puma/puma]
+gem "puma", "~> 5.0"
+
+# Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
+gem "importmap-rails"
+
+# Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
+gem "turbo-rails"
+
+# Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
+gem "stimulus-rails"
+
+# Build JSON APIs with ease [https://github.com/rails/jbuilder]
+gem "jbuilder"
+
+# Use Redis adapter to run Action Cable in production
+# gem "redis", "~> 4.0"
+
+# Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
+# gem "kredis"
+
+# Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
+# gem "bcrypt", "~> 3.1.7"
+
+# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
+gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
+
+# Reduces boot times through caching; required in config/boot.rb
+gem "bootsnap", require: false
+
+# Use Sass to process CSS
+# gem "sassc-rails"
+
+# Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
+# gem "image_processing", "~> 1.2"
 
 group :development, :test do
-  gem 'byebug'
-  gem 'rspec-rails', '~> 6.0.3'
-  gem 'factory_bot_rails'
+  # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
+  gem "debug", platforms: %i[ mri mingw x64_mingw ]
 end
 
 group :development do
-  gem 'web-console', '~> 4.2.0'
-  gem 'spring'
-  gem 'sqlite3'
+  # Use console on exceptions pages [https://github.com/rails/web-console]
+  gem "web-console"
+
+  # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
+  # gem "rack-mini-profiler"
+
+  # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
+  # gem "spring"
 end
 
-group :production do
-  # https://github.com/rails/rails/issues/31673
-  gem 'pg', '~> 1.5.3'
-  gem 'rails_12factor'
-  gem 'puma', '~> 6.3.0'
+group :test do
+  # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
+  gem "capybara"
+  gem "selenium-webdriver"
+  gem "webdrivers"
 end
-

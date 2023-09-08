@@ -25,3 +25,6 @@ Gemfile.lock
 
 package-lock.json
 yarn.lock
+
+# Ignore master key for decrypting credentials and more.
+/config/master.key
